@@ -1,3 +1,18 @@
+/* =========================
+   VARIABLES DE SISTEMA
+========================= */
+:root {
+  --bg-main: #0b0b12;
+  --bg-secondary: #141422;
+  --panel-bg: rgba(255, 255, 255, 0.06);
+  --accent: #7a86ff;
+  --text-main: #eaeaf0;
+  --text-soft: #9fa3c7;
+}
+
+/* =========================
+   RESET
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -5,49 +20,107 @@
 body {
   margin: 0;
   min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0b0b12, #151522);
-  color: #eaeaf0;
+
+  background:
+    linear-gradient(
+      rgba(11, 11, 18, 0.9),
+      rgba(11, 11, 18, 0.9)
+    );
+
+  color: var(--text-main);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
 #app {
-  width: 440px;
-  padding: 32px;
+  width: 460px;
+  padding: 34px;
+
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+
   text-align: center;
+
+  animation: boot 0.8s ease forwards;
 }
 
+/* =========================
+   TEXTO
+========================= */
+h1 {
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 26px;
+}
+
+/* =========================
+   MENÚ
+========================= */
 .menu {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin: 24px 0;
 }
 
 button {
-  padding: 12px;
-  border-radius: 10px;
+  padding: 13px;
+  border-radius: 12px;
   border: none;
-  background: #24243a;
+
+  background: #22223a;
   color: white;
+
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.15s;
 }
 
 button:hover {
-  background: #32325a;
+  background: var(--accent);
   transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(122, 134, 255, 0.35);
 }
 
+/* =========================
+   CONTENIDO DINÁMICO
+========================= */
 #content {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  opacity: 0.85;
+  margin-top: 28px;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  min-height: 42px;
+  line-height: 1.4;
 }
 
+/* =========================
+   ANIMACIÓN DE ARRANQUE
+========================= */
+@keyframes boot {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
