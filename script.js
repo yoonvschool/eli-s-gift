@@ -1,45 +1,23 @@
 function loadModule(module) {
   const content = document.getElementById("content");
 
-  if (module === "inicio") {
-    content.innerHTML = `
-      <h1>Unidad Operativa</h1>
-      <p>Piloto reconocido.<br>Todos los módulos disponibles.</p>
-    `;
+  if (module === "composition") {
+    content.textContent =
+      "COMPOSITION MODULE ONLINE. Structural integrity parameters loaded.";
   }
 
-  if (module === "construccion") {
-    content.innerHTML = `
-      <h1>Modo Construcción</h1>
-      <p>Preparando ensamblaje estructural.</p>
-    `;
+  if (module === "abilities") {
+    content.textContent =
+      "FUNCTIONAL ABILITIES MODULE ACTIVE. Core capabilities synchronized.";
   }
 
-  if (module === "combate") {
-    content.innerHTML = `
-      <h1>Fuerza de Combate</h1>
-      <p>Simulación en espera.</p>
-    `;
+  if (module === "assistance") {
+    content.textContent =
+      "TECHNICAL ASSISTANCE CHANNEL ESTABLISHED. Continuous support available.";
   }
 
-  if (module === "entorno") {
-    content.innerHTML = `
-      <h1>Entorno</h1>
-      <p>Algunos sistemas funcionan mejor con espacio.</p>
-    `;
-  }
-
-  if (module === "companeria") {
-    content.innerHTML = `
-      <h1>Canal de Soporte</h1>
-      <p>Disponibilidad: continua.</p>
-    `;
-  }
-
-  if (module === "sustento") {
-    content.innerHTML = `
-      <h1>Sustento</h1>
-      <p>El sustento no es solo combustible.</p>
-    `;
+  if (module === "sustenance") {
+    content.textContent =
+      "SUSTENANCE SYSTEM STABLE. Energy flow within optimal thresholds.";
   }
 }
